@@ -1,0 +1,51 @@
+/* example 1 */
+//$toolbar-spacing: 5px;
+@import "images/social/*.png";
+
+@include all-social-sprites;
+
+/*example 2*/
+
+/*
+@import "images/social/*.png";
+
+.fb-icon { @include social-sprite(facebook); }
+.rss-icon { @include social-sprite(rss); }
+.twitter-icon { @include social-sprite(twitter); }
+ */
+
+/* example 3 */
+
+/* 
+$icons: sprite-map("social/*.png");
+
+//$icons: sprite-map("toolbar/*.png", $spacing: 5px);
+
+.fb-icon { background: sprite($icons, facebook); }
+.rss-icon { background: sprite($icons, rss); }
+.twitter-icon { background: sprite($icons, twitter); }
+ */
+
+
+/* 
+$icons: sprite-map("social/*.png");
+
+//$icons: sprite-map("toolbar/*.png", $spacing: 5px);
+
+.fb-icon {
+    background-image sprite-url($icons);
+    background-position: sprite-position($icons, facebook)
+    @include sprite-dimensions($icons, facebook); 
+}
+.rss-icon { 
+    background-image sprite-url($icons);
+    background-position: sprite-position($icons, rss)
+    @include sprite-dimensions($icons, rss);     
+}
+.twitter-icon {
+    background-image sprite-url($icons);
+    background-position: sprite-position($icons, twitter)
+    @include sprite-dimensions($icons, twitter);   
+}
+ */
+
